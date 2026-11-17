@@ -295,7 +295,11 @@ footer img{height:70px;width:auto;opacity:.9}
         <label class="f"><span data-i="fName"></span><input class="t" name="nimi" autocomplete="name" required></label>
         <label class="f"><span data-i="fPhone"></span><input class="t" name="puhelin" type="tel" autocomplete="tel" required></label>
       </div>
-      <label class="f"><span data-i="fDate"></span><small class="hint" data-i="fDateHint"></small><select class="t" name="noutoPvm" required></select></label>
+      <small class="hint" data-i="fDateHint" style="display:block;margin:4px 0 10px"></small>
+      <div class="row">
+        <label class="f"><span data-i="fDate"></span><select class="t" name="noutoPvm" required></select></label>
+        <label class="f"><span data-i="fTime"></span><select class="t" name="noutoAika" required></select></label>
+      </div>
       <label class="f"><span data-i="fEmail"></span> <span class="opt" data-i="fEmailOpt"></span><input class="t" name="email" type="email" autocomplete="email"></label>
       <label class="f"><span data-i="fMsg"></span> <span class="opt" data-i="optional"></span><small class="hint" data-i="fMsgHint"></small><textarea class="t" name="viesti" data-ph="fMsgPh"></textarea></label>
       <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -425,9 +429,9 @@ var T = {
   giftSwitch:'Haluan jouluetiketin', giftSwitchSmall:'Sama etiketti kaikille maille · ei lisähintaa', giftHowMany:'Montako purkkia jouluetiketillä?',
   formTitle:'Tilaus', formSub:'Täytä yhteystietosi ja valitse noutopäivä. Nouto Laukantien itsepalveluautomaatista (Laukantie 151, Perniö).',
   routeBtn:'🗺️ Reitti automaatille', routeLink:'Reitti Laukantien automaatille (Google Maps)',
-  fDate:'Noutopäivä', fDateHint:'Purkit ovat automaatissa valitsemanasi päivänä klo 12 alkaen.', timePh:'Valitse päivä', errPick:'Valitse noutopäivä.',
+  fDate:'Noutopäivä', fTime:'Noutoaika', fDateHint:'Valitse noutoaika vähintään 2 tuntia etukäteen. Purkit odottavat automaatissa valitsemastasi ajasta alkaen.', timePh:'Valitse päivä', timePh2:'Valitse aika', errPick:'Valitse noutopäivä ja -aika (vähintään 2 tuntia etukäteen).',
   fName:'Nimi', fPhone:'Puhelin', fEmail:'Sähköposti', fEmailOpt:'(vahvistus sähköpostiin)', fMsg:'Viesti', optional:'(vapaaehtoinen)',
-  infoPickup:'<b>Nouto:</b> Laukantien itsepalveluautomaatista (Laukantie 151, Perniö) joka päivä, valitsemanasi päivänä klo 12 alkaen. Pussissa on tilausnumerosi ja nimesi. Perniön ja Särkisalon alueelle voimme toimittaa sopimuksen mukaan, kirjoita toiveesi viestikenttään.',
+  infoPickup:'<b>Nouto:</b> Laukantien itsepalveluautomaatista (Laukantie 151, Perniö) joka päivä, valitsemastasi ajasta alkaen. Pussissa on tilausnumerosi ja nimesi. Perniön ja Särkisalon alueelle voimme toimittaa sopimuksen mukaan, kirjoita toiveesi viestikenttään.',
   fMsgHint:'Toivotko toimitusta Perniön tai Särkisalon alueelle? Kirjoita toiveesi tähän, niin sovitaan erikseen.', fMsgPh:'Esim. toimitustoive ja osoite',
   infoPay:'<b>Maksu vain MobilePaylla</b> numeroon '+ASET.mobilepay+'. Saat maksuohjeen heti tilauksen jälkeen.',
   sumTitle:'Ostoskori', sumEmpty:'Ei vielä purkkeja. Valitse maut yllä.', sumTotal:'Yhteensä',
@@ -469,9 +473,9 @@ var T = {
   giftSwitch:'Jag vill ha juletikett', giftSwitchSmall:'Samma etikett för alla smaker · inget tillägg i priset', giftHowMany:'Hur många burkar med juletikett?',
   formTitle:'Beställning', formSub:'Fyll i dina kontaktuppgifter och välj avhämtningsdag. Avhämtning från självbetjäningsautomaten på Laukantie (Laukantie 151, Bjärnå).',
   routeBtn:'🗺️ Vägbeskrivning till automaten', routeLink:'Vägbeskrivning till automaten på Laukantie (Google Maps)',
-  fDate:'Avhämtningsdag', fDateHint:'Burkarna finns i automaten den valda dagen från kl. 12.', timePh:'Välj dag', errPick:'Välj avhämtningsdag.',
+  fDate:'Avhämtningsdag', fTime:'Tid', fDateHint:'Välj tid minst 2 timmar i förväg. Burkarna väntar i automaten från den tid du valt.', timePh:'Välj dag', timePh2:'Välj tid', errPick:'Välj dag och tid för avhämtningen (minst 2 timmar i förväg).',
   fName:'Namn', fPhone:'Telefon', fEmail:'E-post', fEmailOpt:'(bekräftelse per e-post)', fMsg:'Meddelande', optional:'(frivilligt)',
-  infoPickup:'<b>Avhämtning:</b> från självbetjäningsautomaten på Laukantie (Laukantie 151, Bjärnå) varje dag, den valda dagen från kl. 12. Påsen är märkt med ditt beställningsnummer och namn. Inom Bjärnå och Finby kan vi leverera enligt överenskommelse, skriv ditt önskemål i meddelandefältet.',
+  infoPickup:'<b>Avhämtning:</b> från självbetjäningsautomaten på Laukantie (Laukantie 151, Bjärnå) varje dag, från den tid du valt. Påsen är märkt med ditt beställningsnummer och namn. Inom Bjärnå och Finby kan vi leverera enligt överenskommelse, skriv ditt önskemål i meddelandefältet.',
   fMsgHint:'Önskar du leverans inom Bjärnå eller Finby? Skriv ditt önskemål här, så kommer vi överens.', fMsgPh:'T.ex. leveransönskemål och adress',
   infoPay:'<b>Betalning endast med MobilePay</b> till numret '+ASET.mobilepay+'. Du får betalningsanvisningen direkt efter beställningen.',
   sumTitle:'Varukorg', sumEmpty:'Inga burkar ännu. Välj smaker ovan.', sumTotal:'Totalt',
@@ -513,9 +517,9 @@ var T = {
   giftSwitch:'I want the Christmas label', giftSwitchSmall:'Same label for all flavours · no extra cost', giftHowMany:'How many jars with the Christmas label?',
   formTitle:'Order', formSub:'Fill in your details and choose a pickup day. Pickup from the self-service machine on Laukantie (Laukantie 151, Perniö).',
   routeBtn:'🗺️ Directions to the pickup machine', routeLink:'Directions to the pickup machine on Laukantie (Google Maps)',
-  fDate:'Pickup day', fDateHint:'Your jars are in the machine from 12:00 on the day you choose.', timePh:'Choose a day', errPick:'Please choose a pickup day.',
+  fDate:'Pickup day', fTime:'Pickup time', fDateHint:'Choose a time at least 2 hours ahead. Your jars will be waiting in the machine from the time you choose.', timePh:'Choose a day', timePh2:'Choose a time', errPick:'Please choose a pickup day and time (at least 2 hours ahead).',
   fName:'Name', fPhone:'Phone', fEmail:'Email', fEmailOpt:'(confirmation by email)', fMsg:'Message', optional:'(optional)',
-  infoPickup:'<b>Pickup:</b> from the self-service machine on Laukantie (Laukantie 151, Perniö), any day, from 12:00 on the day you choose. The bag is marked with your order number and name. We can deliver in the Perniö and Särkisalo area by arrangement; write your request in the message field.',
+  infoPickup:'<b>Pickup:</b> from the self-service machine on Laukantie (Laukantie 151, Perniö), any day, from the time you choose. The bag is marked with your order number and name. We can deliver in the Perniö and Särkisalo area by arrangement; write your request in the message field.',
   fMsgHint:'Would you like delivery in the Perniö or Särkisalo area? Write your request here and we will arrange it separately.', fMsgPh:'E.g. delivery request and address',
   infoPay:'<b>Payment by MobilePay only</b> to '+ASET.mobilepay+'. You will get the payment instructions right after ordering.',
   sumTitle:'Basket', sumEmpty:'No jars yet. Choose your flavours above.', sumTotal:'Total',
@@ -626,10 +630,10 @@ $('#jouluBox').addEventListener('change', function(){ joulu=this.checked; jouluK
 $('#send').addEventListener('click', function(){
   var t=T[lang], f=$('#form'), err=$('#err');
   var d = { nimi:f.nimi.value.trim(), puhelin:f.puhelin.value.trim(), email:f.email.value.trim(), viesti:f.viesti.value.trim(),
-            hp:f.hp.value, kieli:lang, noutoPvm:f.noutoPvm.value, maarat:JSON.parse(JSON.stringify(qty)), joulu:joulu, jouluKpl:jouluKpl };
+            hp:f.hp.value, kieli:lang, noutoPvm:f.noutoPvm.value, noutoAika:f.noutoAika.value, maarat:JSON.parse(JSON.stringify(qty)), joulu:joulu, jouluKpl:jouluKpl };
   err.textContent='';
   if (!d.nimi || !d.puhelin){ err.textContent=t.errName; f.scrollIntoView({behavior:'smooth',block:'center'}); (d.nimi?f.puhelin:f.nimi).focus(); return; }
-  if (!d.noutoPvm){ err.textContent=t.errPick; f.noutoPvm.focus(); return; }
+  if (!d.noutoPvm || !d.noutoAika || (d.noutoPvm+' '+d.noutoAika) < earliest()){ err.textContent=t.errPick; (d.noutoPvm?f.noutoAika:f.noutoPvm).focus(); fillTimes(); return; }
   if (d.email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)){ err.textContent=t.errEmail; f.email.focus(); return; }
   var btn=this; btn.disabled=true; btn.textContent=t.sending;
   function ok(r){ r.email=d.email; lastOrder=r; fillDone(r); $('#done').classList.add('show');
@@ -664,18 +668,27 @@ var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es
 function observe(){ $$('.reveal:not(.in)').forEach(function(el){ io ? io.observe(el) : el.classList.add('in'); }); }
 
 var VKP={fi:['su','ma','ti','ke','to','pe','la'], sv:['sön','mån','tis','ons','tor','fre','lör'], en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat']};
-function fillTimes(){
-  var sel=$('select[name=noutoPvm]'), cur=sel.value, o='<option value="">'+T[lang].timePh+'</option>', p=function(n){return (n<10?'0':'')+n;};
-  var now=new Date(), d=new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  if (now.getHours() >= 10) d.setDate(d.getDate()+1);           // saman päivän nouto vain ennen klo 10 tilattaessa
-  var klo = lang==='sv' ? 'kl. 12' : lang==='en' ? '12:00' : 'klo 12';
-  for (var i=0; i<21; i++){
-    var v=d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate());
-    o+='<option value="'+v+'">'+VKP[lang][d.getDay()]+' '+d.getDate()+'.'+(d.getMonth()+1)+'. · '+(lang==='en'?'from ':'')+klo+(lang==='fi'?' alkaen':lang==='sv'?' och framåt':'')+'</option>';
-    d.setDate(d.getDate()+1);
-  }
-  sel.innerHTML=o; sel.value=cur;
+var ENNAKKO_H = 2;
+function p2(n){ return (n<10?'0':'')+n; }
+function ymd(d){ return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate()); }
+function earliest(){                                   // aikaisin sallittu nouto, täysi tunti vähintään 2 h päästä
+  var e=new Date(Date.now()+ENNAKKO_H*3600*1000);
+  if (e.getMinutes()||e.getSeconds()) { e.setHours(e.getHours()+1); }
+  e.setMinutes(0,0,0);
+  return ymd(e)+' '+p2(e.getHours())+':00';
 }
+function fillTimes(){
+  var ds=$('select[name=noutoPvm]'), ts=$('select[name=noutoAika]'), curD=ds.value, curT=ts.value;
+  var first=earliest(), firstDay=first.slice(0,10);
+  var d=new Date(Number(firstDay.slice(0,4)), Number(firstDay.slice(5,7))-1, Number(firstDay.slice(8,10)));
+  var o='<option value="">'+T[lang].timePh+'</option>';
+  for (var i=0; i<21; i++){ o+='<option value="'+ymd(d)+'">'+VKP[lang][d.getDay()]+' '+d.getDate()+'.'+(d.getMonth()+1)+'.</option>'; d.setDate(d.getDate()+1); }
+  ds.innerHTML=o; ds.value=curD;
+  var day=ds.value, ot='<option value="">'+T[lang].timePh2+'</option>', pre=(lang==='sv'?'kl. ':lang==='en'?'':'klo ');
+  for (var h=0; h<24; h++){ var v=p2(h)+':00'; if (day && (day+' '+v) < first) continue; ot+='<option value="'+v+'">'+pre+v+'</option>'; }
+  ts.innerHTML=ot; ts.value=curT;
+}
+$('select[name=noutoPvm]').addEventListener('change', fillTimes);
 $('#routeBtn').href = ASET.reitti;
 var start='fi'; try { start = localStorage.getItem('kurkku-lang') || 'fi'; } catch(e){}
 applyLang(start==='sv'||start==='en'?start:'fi'); onScroll();
