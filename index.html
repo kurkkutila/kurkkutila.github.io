@@ -162,6 +162,8 @@ textarea.t{min-height:90px;resize:vertical}
 .info{display:grid;gap:12px;margin:8px 0 24px}
 .info div{display:flex;gap:12px;align-items:flex-start;background:var(--g100);border-radius:14px;padding:12px 14px;font-size:.92rem}
 .info i{font-style:normal;font-size:1.3rem;line-height:1}
+.kaappi{margin:0;display:flex;gap:14px;align-items:center;background:var(--g100);border-radius:14px;padding:12px 14px;font-size:.88rem}
+.kaappi img{width:110px;height:auto;border-radius:10px;flex:none}
 .err{color:var(--red);font-weight:700;min-height:1.4em;margin:10px 0 0}
 .summary{position:sticky;top:96px;background:var(--g800);color:var(--cream);border-radius:var(--r);padding:30px;box-shadow:var(--shadow);overflow:hidden}
 .summary::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;background:var(--logo) center/contain no-repeat;opacity:.08;transform:rotate(-12deg)}
@@ -305,6 +307,7 @@ footer img{height:70px;width:auto;opacity:.9}
       <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="info">
         <div><i>📍</i><span data-i="infoPickup"></span></div>
+        <figure class="kaappi"><img src="https://kurkkutila.github.io/automaatti.jpg" alt="" loading="lazy"><figcaption data-i="kaappiCap"></figcaption></figure>
         <div><i>📱</i><span data-i="infoPay"></span></div>
       </div>
       <p class="err" id="err" role="alert"></p>
@@ -363,6 +366,7 @@ footer img{height:70px;width:auto;opacity:.9}
       <div class="copy"><span><small data-i="doneMessage"></small><b id="mpMsg"></b></span><button type="button" data-copy="mpMsg" data-i="copy"></button></div>
     </div>
     <p class="pick" id="donePick" style="font-weight:800;color:var(--g800)"></p>
+    <p style="margin:10px 0 4px"><img src="https://kurkkutila.github.io/automaatti.jpg" alt="" style="width:120px;border-radius:10px"></p>
     <p style="margin:6px 0 4px"><a class="btn" id="routeBtn" target="_blank" rel="noopener" data-i="routeBtn"></a></p>
     <p class="pick" id="doneMail"></p>
     <button class="btn dark" type="button" id="doneClose" data-i="doneClose"></button>
@@ -429,7 +433,7 @@ var T = {
   giftSwitch:'Haluan jouluetiketin', giftSwitchSmall:'Sama etiketti kaikille maille · ei lisähintaa', giftHowMany:'Montako purkkia jouluetiketillä?',
   formTitle:'Tilaus', formSub:'Täytä yhteystietosi ja valitse noutopäivä. Nouto Laukantien itsepalveluautomaatista (Laukantie 151, Perniö).',
   routeBtn:'🗺️ Reitti automaatille', routeLink:'Reitti Laukantien automaatille (Google Maps)',
-  fDate:'Noutopäivä', fTime:'Noutoaika', fDateHint:'Valitse noutoaika vähintään 2 tuntia etukäteen. Purkit odottavat automaatissa valitsemastasi ajasta alkaen.', timePh:'Valitse päivä', timePh2:'Valitse aika', errPick:'Valitse noutopäivä ja -aika (vähintään 2 tuntia etukäteen).',
+  kaappiCap:'Tältä itsepalveluautomaatti näyttää: Laukantie 151, Perniö, tien varrella.', fDate:'Noutopäivä', fTime:'Noutoaika', fDateHint:'Valitse noutoaika vähintään 2 tuntia etukäteen. Purkit odottavat automaatissa valitsemastasi ajasta alkaen.', timePh:'Valitse päivä', timePh2:'Valitse aika', errPick:'Valitse noutopäivä ja -aika (vähintään 2 tuntia etukäteen).',
   fName:'Nimi', fPhone:'Puhelin', fEmail:'Sähköposti', fEmailOpt:'(vahvistus sähköpostiin)', fMsg:'Viesti', optional:'(vapaaehtoinen)',
   infoPickup:'<b>Nouto:</b> Laukantien itsepalveluautomaatista (Laukantie 151, Perniö) joka päivä, valitsemastasi ajasta alkaen. Tilauksesi löytyy automaatista tilausnumerollasi. Perniön ja Särkisalon alueelle voimme toimittaa sopimuksen mukaan, kirjoita toiveesi viestikenttään.',
   fMsgHint:'Toivotko toimitusta Perniön tai Särkisalon alueelle? Kirjoita toiveesi tähän, niin sovitaan erikseen.', fMsgPh:'Esim. toimitustoive ja osoite',
@@ -473,7 +477,7 @@ var T = {
   giftSwitch:'Jag vill ha juletikett', giftSwitchSmall:'Samma etikett för alla smaker · inget tillägg i priset', giftHowMany:'Hur många burkar med juletikett?',
   formTitle:'Beställning', formSub:'Fyll i dina kontaktuppgifter och välj avhämtningsdag. Avhämtning från självbetjäningsautomaten på Laukantie (Laukantie 151, Bjärnå).',
   routeBtn:'🗺️ Vägbeskrivning till automaten', routeLink:'Vägbeskrivning till automaten på Laukantie (Google Maps)',
-  fDate:'Avhämtningsdag', fTime:'Tid', fDateHint:'Välj tid minst 2 timmar i förväg. Burkarna väntar i automaten från den tid du valt.', timePh:'Välj dag', timePh2:'Välj tid', errPick:'Välj dag och tid för avhämtningen (minst 2 timmar i förväg).',
+  kaappiCap:'Så här ser självbetjäningsautomaten ut: Laukantie 151, Bjärnå, vid vägen.', fDate:'Avhämtningsdag', fTime:'Tid', fDateHint:'Välj tid minst 2 timmar i förväg. Burkarna väntar i automaten från den tid du valt.', timePh:'Välj dag', timePh2:'Välj tid', errPick:'Välj dag och tid för avhämtningen (minst 2 timmar i förväg).',
   fName:'Namn', fPhone:'Telefon', fEmail:'E-post', fEmailOpt:'(bekräftelse per e-post)', fMsg:'Meddelande', optional:'(frivilligt)',
   infoPickup:'<b>Avhämtning:</b> från självbetjäningsautomaten på Laukantie (Laukantie 151, Bjärnå) varje dag, från den tid du valt. Din beställning finns i automaten under ditt beställningsnummer. Inom Bjärnå och Finby kan vi leverera enligt överenskommelse, skriv ditt önskemål i meddelandefältet.',
   fMsgHint:'Önskar du leverans inom Bjärnå eller Finby? Skriv ditt önskemål här, så kommer vi överens.', fMsgPh:'T.ex. leveransönskemål och adress',
@@ -517,7 +521,7 @@ var T = {
   giftSwitch:'I want the Christmas label', giftSwitchSmall:'Same label for all flavours · no extra cost', giftHowMany:'How many jars with the Christmas label?',
   formTitle:'Order', formSub:'Fill in your details and choose a pickup day. Pickup from the self-service machine on Laukantie (Laukantie 151, Perniö).',
   routeBtn:'🗺️ Directions to the pickup machine', routeLink:'Directions to the pickup machine on Laukantie (Google Maps)',
-  fDate:'Pickup day', fTime:'Pickup time', fDateHint:'Choose a time at least 2 hours ahead. Your jars will be waiting in the machine from the time you choose.', timePh:'Choose a day', timePh2:'Choose a time', errPick:'Please choose a pickup day and time (at least 2 hours ahead).',
+  kaappiCap:'This is the self-service pickup machine: Laukantie 151, Perniö, by the road.', fDate:'Pickup day', fTime:'Pickup time', fDateHint:'Choose a time at least 2 hours ahead. Your jars will be waiting in the machine from the time you choose.', timePh:'Choose a day', timePh2:'Choose a time', errPick:'Please choose a pickup day and time (at least 2 hours ahead).',
   fName:'Name', fPhone:'Phone', fEmail:'Email', fEmailOpt:'(confirmation by email)', fMsg:'Message', optional:'(optional)',
   infoPickup:'<b>Pickup:</b> from the self-service machine on Laukantie (Laukantie 151, Perniö), any day, from the time you choose. Your order will be in the machine under your order number. We can deliver in the Perniö and Särkisalo area by arrangement; write your request in the message field.',
   fMsgHint:'Would you like delivery in the Perniö or Särkisalo area? Write your request here and we will arrange it separately.', fMsgPh:'E.g. delivery request and address',
