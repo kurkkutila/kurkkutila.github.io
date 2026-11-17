@@ -693,6 +693,17 @@ $('select[name=noutoPvm]').addEventListener('change', fillTimes);
 $('#routeBtn').href = ASET.reitti;
 var start='fi'; try { start = localStorage.getItem('kurkku-lang') || 'fi'; } catch(e){}
 applyLang(start==='sv'||start==='en'?start:'fi'); onScroll();
+
+// Kävijälaskuri: yksi rivi taulukkoon / sivun avaus. Ei evästeitä, ei henkilötietoja.
+(function(){
+  if (!API || /[?&]noseuranta/.test(location.search)) return;
+  var ua=navigator.userAgent||'', ref=(document.referrer||'').toLowerCase();
+  var sovellus = /Instagram/i.test(ua) ? 'Instagram' : (/FBAN|FBAV|FB_IAB/i.test(ua) ? 'Facebook' : '');
+  var lahde = sovellus || (/instagram\./.test(ref) ? 'Instagram' : /facebook\.|fb\.me/.test(ref) ? 'Facebook' : /google\./.test(ref) ? 'Google' : ref && ref.indexOf(location.host)<0 ? 'Muu linkki' : 'Suora');
+  var laite = /Mobi|Android|iPhone|iPad/i.test(ua) ? 'Puhelin' : 'Tietokone';
+  try { fetch(API, { method:'POST', mode:'no-cors', keepalive:true, headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body: JSON.stringify({ tyyppi:'kaynti', kieli:lang, lahde:lahde, laite:laite, sovellus:sovellus }) }); } catch(e){}
+})();
 </script>
 </body>
 </html>
