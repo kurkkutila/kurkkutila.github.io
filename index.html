@@ -295,10 +295,7 @@ footer img{height:70px;width:auto;opacity:.9}
         <label class="f"><span data-i="fName"></span><input class="t" name="nimi" autocomplete="name" required></label>
         <label class="f"><span data-i="fPhone"></span><input class="t" name="puhelin" type="tel" autocomplete="tel" required></label>
       </div>
-      <div class="row">
-        <label class="f"><span data-i="fDate"></span><input class="t" name="noutoPvm" type="date" required></label>
-        <label class="f"><span data-i="fTime"></span><select class="t" name="noutoAika" required></select></label>
-      </div>
+      <label class="f"><span data-i="fDate"></span><small class="hint" data-i="fDateHint"></small><select class="t" name="noutoPvm" required></select></label>
       <label class="f"><span data-i="fEmail"></span> <span class="opt" data-i="fEmailOpt"></span><input class="t" name="email" type="email" autocomplete="email"></label>
       <label class="f"><span data-i="fMsg"></span> <span class="opt" data-i="optional"></span><small class="hint" data-i="fMsgHint"></small><textarea class="t" name="viesti" data-ph="fMsgPh"></textarea></label>
       <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -412,9 +409,9 @@ var T = {
   jarsWord:'purkkia', stampSmall:'/ purkki<br>yksittäin 6 €',
   heroEyebrow:'Suoraan tilalta · Perniön Nurkkila',
   heroTitle:'Rapeat kurkut <em>omalta pellolta</em> purkkiin.',
-  heroLead:'Neljä makua kotimaisesta avomaankurkusta. Valitse purkit, maksa MobilePaylla ja nouda tilauksesi Roitmäentien kylmiöstä joka päivä klo 9–18.',
+  heroLead:'Neljä makua kotimaisesta avomaankurkusta. Valitse purkit, maksa MobilePaylla ja nouda tilauksesi Laukantien itsepalveluautomaatista, joka päivä.',
   heroBtn:'Valitse purkit →', heroGhost:'Joululahjaksi 🎄',
-  marquee:['100 % kotimainen','Rapeat','Avomaankurkku','Perniön Nurkkilasta','3+ purkkia 5 € / kpl','Nouto joka päivä 9–18','Tilaa jouluksi viimeistään 20.12.','Rajoitettu erä'],
+  marquee:['100 % kotimainen','Rapeat','Avomaankurkku','Perniön Nurkkilasta','3+ purkkia 5 € / kpl','Nouto joka päivä itsepalveluautomaatista','Tilaa jouluksi viimeistään 20.12.','Rajoitettu erä'],
   prodPill:'680 g purkki · 6 € · 3+ purkkia 5 € / kpl', prodTitle:'Valitse suosikkisi',
   prodText:'Kaikki maut ovat samanhintaisia. Yksi purkki maksaa 6 €. Kun tilaat vähintään kolme purkkia, jokainen purkki maksaa 5 €, ja voit yhdistellä makuja vapaasti. Rajoitettu erä: tilaa jouluksi viimeistään 20.12. tai niin kauan kuin purkkeja riittää.',
   details:'Ainesosat ja ravintoarvot', ingr:'Ainesosat', weight:'Paino 680 g, josta kurkkua n. 310 g.',
@@ -426,12 +423,12 @@ var T = {
   giftTitle:'Purkki, joka <em>ilahduttaa</em>.',
   giftText:'Saat purkit halutessasi joulun erikoisetiketillä. Erikoisetiketti on sama kaikissa purkeissa riippumatta siitä, mitä makua tilaat, ja siinä lukee kuten kuvassa: <b>Kurkkutilan Koruviipaleet · Christmas Edition · Hyvää Joulua! God Jul!</b> Purkit sopivat valmiiksi lahjaksi työkaverille, naapurille tai joulupöytään.',
   giftSwitch:'Haluan jouluetiketin', giftSwitchSmall:'Sama etiketti kaikille maille · ei lisähintaa', giftHowMany:'Montako purkkia jouluetiketillä?',
-  formTitle:'Tilaus', formSub:'Täytä yhteystietosi. Nouto Roitmäentien kylmiöstä joka päivä klo 9–18.',
-  routeBtn:'🗺️ Reitti kylmiölle', routeLink:'Reitti Roitmäentien kylmiölle (Google Maps)',
-  fDate:'Noutopäivä', fTime:'Noutoaika', timePh:'Valitse aika', errPick:'Valitse noutopäivä ja -aika.',
+  formTitle:'Tilaus', formSub:'Täytä yhteystietosi ja valitse noutopäivä. Nouto Laukantien itsepalveluautomaatista (Laukantie 151, Perniö).',
+  routeBtn:'🗺️ Reitti automaatille', routeLink:'Reitti Laukantien automaatille (Google Maps)',
+  fDate:'Noutopäivä', fDateHint:'Purkit ovat automaatissa valitsemanasi päivänä klo 12 alkaen.', timePh:'Valitse päivä', errPick:'Valitse noutopäivä.',
   fName:'Nimi', fPhone:'Puhelin', fEmail:'Sähköposti', fEmailOpt:'(vahvistus sähköpostiin)', fMsg:'Viesti', optional:'(vapaaehtoinen)',
-  infoPickup:'<b>Nouto:</b> Roitmäentien kylmiöstä joka päivä klo 9–18. Perniön ja Särkisalon alueelle voimme toimittaa sopimuksen mukaan, kirjoita toiveesi viestikenttään.',
-  fMsgHint:'Toivotko toimitusta Perniön tai Särkisalon alueelle? Kirjoita toiveesi tähän, niin sovitaan erikseen.', fMsgPh:'Esim. toimitustoive, osoite tai sopiva noutoaika',
+  infoPickup:'<b>Nouto:</b> Laukantien itsepalveluautomaatista (Laukantie 151, Perniö) joka päivä, valitsemanasi päivänä klo 12 alkaen. Pussissa on tilausnumerosi ja nimesi. Perniön ja Särkisalon alueelle voimme toimittaa sopimuksen mukaan, kirjoita toiveesi viestikenttään.',
+  fMsgHint:'Toivotko toimitusta Perniön tai Särkisalon alueelle? Kirjoita toiveesi tähän, niin sovitaan erikseen.', fMsgPh:'Esim. toimitustoive ja osoite',
   infoPay:'<b>Maksu vain MobilePaylla</b> numeroon '+ASET.mobilepay+'. Saat maksuohjeen heti tilauksen jälkeen.',
   sumTitle:'Ostoskori', sumEmpty:'Ei vielä purkkeja. Valitse maut yllä.', sumTotal:'Yhteensä',
   sumPay:'Maksu MobilePaylla tilauksen jälkeen. Tilauksen viestiksi tulee tilausnumero.',
@@ -442,13 +439,13 @@ var T = {
   storyTitle:'Kasvatettu Perniön Nurkkilassa, avomaalla.',
   storyText:'Kurkut kasvavat avomaalla omilla pelloillamme Perniön Nurkkilassa. Kesän sato säilötään rapeiksi viipaleiksi, joten kesän maku riittää koko talveksi.',
   fact1:'kotimainen kurkku', fact2:'purkin paino', fact3:'makua valittavana',
-  footPickup:'nouto Roitmäentien kylmiöstä joka päivä klo 9–18',
+  footPickup:'nouto itsepalveluautomaatista joka päivä',
   footNote:'Tilaukset käsitellään Pitkäsen Kurkkutila Oy:ssä. Yhteystietojasi käytetään vain tilauksen hoitamiseen.',
   errName:'Täytä nimi ja puhelinnumero.', errEmail:'Tarkista sähköpostiosoite.', errNet:'Lähetys ei onnistunut. Yritä uudelleen tai soita 040 079 4090.',
-  donePickTxt:'Nouto {t}, Roitmäentien kylmiö.',
+  donePickTxt:'Purkkisi odottavat Laukantien itsepalveluautomaatissa {t} alkaen. Pussissa on tilausnumerosi ja nimesi.',
   doneTitle:'Kiitos tilauksesta!', doneNr:'Tilausnumero #{n}', donePay:'Maksa MobilePaylla', doneNumber:'Numero', doneMessage:'Viesti',
   msgWord:'Tilaus', copy:'Kopioi', copied:'Kopioitu ✓',
-  donePickup:'Nouda tilauksesi Roitmäentien kylmiöstä joka päivä klo 9–18.',
+  donePickup:'Nouda tilauksesi Laukantien itsepalveluautomaatista.',
   doneMail:'Vahvistus lähti osoitteeseen {e}.', doneClose:'Valmis'
  },
  sv:{
@@ -456,9 +453,9 @@ var T = {
   jarsWord:'burkar', stampSmall:'/ burk<br>en burk 6 €',
   heroEyebrow:'Direkt från gården · Nurkkila, Bjärnå',
   heroTitle:'Krispig gurka <em>från vår egen åker</em>, rakt i burken.',
-  heroLead:'Fyra smaker av inhemsk frilandsgurka. Välj burkar, betala med MobilePay och hämta beställningen från kylrummet på Roitmäentie varje dag kl. 9–18.',
+  heroLead:'Fyra smaker av inhemsk frilandsgurka. Välj burkar, betala med MobilePay och hämta beställningen från självbetjäningsautomaten på Laukantie, varje dag.',
   heroBtn:'Välj burkar →', heroGhost:'Som julklapp 🎄',
-  marquee:['100 % inhemsk','Krispig','Frilandsgurka','Från Nurkkila i Bjärnå','3+ burkar 5 € / st','Avhämtning varje dag 9–18','Beställ till jul senast 20.12.','Begränsat parti'],
+  marquee:['100 % inhemsk','Krispig','Frilandsgurka','Från Nurkkila i Bjärnå','3+ burkar 5 € / st','Avhämtning varje dag från automaten','Beställ till jul senast 20.12.','Begränsat parti'],
   prodPill:'Burk 680 g · 6 € · 3+ burkar 5 € / st', prodTitle:'Välj din favorit',
   prodText:'Alla smaker kostar lika mycket. En burk kostar 6 €. När du beställer minst tre burkar kostar varje burk 5 €, och du kan blanda smakerna fritt. Begränsat parti: beställ till jul senast 20.12. eller så länge lagret räcker.',
   details:'Ingredienser och näringsvärde', ingr:'Ingredienser', weight:'Vikt 680 g, varav gurka ca 310 g.',
@@ -470,12 +467,12 @@ var T = {
   giftTitle:'En burk som <em>gläder</em>.',
   giftText:'Om du vill får du burkarna med en särskild juletikett. Juletiketten är densamma på alla burkar oavsett vilken smak du beställer, och texten är som på bilden: <b>Kurkkutilan Koruviipaleet · Christmas Edition · Hyvää Joulua! God Jul!</b> Burkarna passar som färdig present till arbetskamraten, grannen eller julbordet.',
   giftSwitch:'Jag vill ha juletikett', giftSwitchSmall:'Samma etikett för alla smaker · inget tillägg i priset', giftHowMany:'Hur många burkar med juletikett?',
-  formTitle:'Beställning', formSub:'Fyll i dina kontaktuppgifter. Avhämtning från kylrummet på Roitmäentie varje dag kl. 9–18.',
-  routeBtn:'🗺️ Vägbeskrivning till kylrummet', routeLink:'Vägbeskrivning till kylrummet på Roitmäentie (Google Maps)',
-  fDate:'Avhämtningsdag', fTime:'Tid', timePh:'Välj tid', errPick:'Välj dag och tid för avhämtningen.',
+  formTitle:'Beställning', formSub:'Fyll i dina kontaktuppgifter och välj avhämtningsdag. Avhämtning från självbetjäningsautomaten på Laukantie (Laukantie 151, Bjärnå).',
+  routeBtn:'🗺️ Vägbeskrivning till automaten', routeLink:'Vägbeskrivning till automaten på Laukantie (Google Maps)',
+  fDate:'Avhämtningsdag', fDateHint:'Burkarna finns i automaten den valda dagen från kl. 12.', timePh:'Välj dag', errPick:'Välj avhämtningsdag.',
   fName:'Namn', fPhone:'Telefon', fEmail:'E-post', fEmailOpt:'(bekräftelse per e-post)', fMsg:'Meddelande', optional:'(frivilligt)',
-  infoPickup:'<b>Avhämtning:</b> från kylrummet på Roitmäentie varje dag kl. 9–18. Inom Bjärnå och Finby kan vi leverera enligt överenskommelse, skriv ditt önskemål i meddelandefältet.',
-  fMsgHint:'Önskar du leverans inom Bjärnå eller Finby? Skriv ditt önskemål här, så kommer vi överens.', fMsgPh:'T.ex. leveransönskemål, adress eller lämplig avhämtningstid',
+  infoPickup:'<b>Avhämtning:</b> från självbetjäningsautomaten på Laukantie (Laukantie 151, Bjärnå) varje dag, den valda dagen från kl. 12. Påsen är märkt med ditt beställningsnummer och namn. Inom Bjärnå och Finby kan vi leverera enligt överenskommelse, skriv ditt önskemål i meddelandefältet.',
+  fMsgHint:'Önskar du leverans inom Bjärnå eller Finby? Skriv ditt önskemål här, så kommer vi överens.', fMsgPh:'T.ex. leveransönskemål och adress',
   infoPay:'<b>Betalning endast med MobilePay</b> till numret '+ASET.mobilepay+'. Du får betalningsanvisningen direkt efter beställningen.',
   sumTitle:'Varukorg', sumEmpty:'Inga burkar ännu. Välj smaker ovan.', sumTotal:'Totalt',
   sumPay:'Betalning med MobilePay efter beställningen. Ange beställningsnumret som meddelande.',
@@ -486,13 +483,13 @@ var T = {
   storyTitle:'Odlad på friland i Nurkkila, Bjärnå.',
   storyText:'Gurkorna växer på friland på våra egna åkrar i Nurkkila i Bjärnå. Sommarens skörd läggs in till krispiga skivor, så att sommarens smak räcker hela vintern.',
   fact1:'inhemsk gurka', fact2:'burkens vikt', fact3:'smaker att välja',
-  footPickup:'avhämtning från kylrummet på Roitmäentie varje dag kl. 9–18',
+  footPickup:'avhämtning från självbetjäningsautomaten varje dag',
   footNote:'Beställningarna behandlas av Pitkäsen Kurkkutila Oy. Dina kontaktuppgifter används endast för att sköta beställningen.',
   errName:'Fyll i namn och telefonnummer.', errEmail:'Kontrollera e-postadressen.', errNet:'Det gick inte att skicka. Försök igen eller ring 040 079 4090.',
-  donePickTxt:'Avhämtning {t}, kylrummet på Roitmäentie.',
+  donePickTxt:'Dina burkar väntar i självbetjäningsautomaten på Laukantie från {t}. Påsen är märkt med ditt beställningsnummer och namn.',
   doneTitle:'Tack för din beställning!', doneNr:'Beställningsnummer #{n}', donePay:'Betala med MobilePay', doneNumber:'Nummer', doneMessage:'Meddelande',
   msgWord:'Beställning', copy:'Kopiera', copied:'Kopierat ✓',
-  donePickup:'Hämta din beställning från kylrummet på Roitmäentie varje dag kl. 9–18.',
+  donePickup:'Hämta din beställning från självbetjäningsautomaten på Laukantie.',
   doneMail:'Bekräftelsen skickades till {e}.', doneClose:'Klar'
  },
  en:{
@@ -500,9 +497,9 @@ var T = {
   jarsWord:'jars', stampSmall:'per jar<br>single jar 6 €',
   heroEyebrow:'Straight from the farm · Nurkkila, Perniö',
   heroTitle:'Crunchy pickles <em>from our own fields</em>, straight into the jar.',
-  heroLead:'Four flavours of Finnish field-grown cucumber. Choose your jars, pay with MobilePay and pick up your order from the cold store on Roitmäentie, any day 9–18.',
+  heroLead:'Four flavours of Finnish field-grown cucumber. Choose your jars, pay with MobilePay and collect your order from the self-service pickup machine on Laukantie, any day.',
   heroBtn:'Choose jars →', heroGhost:'Christmas gifts 🎄',
-  marquee:['100 % Finnish','Crunchy','Field-grown','From Nurkkila, Perniö','3+ jars 5 € each','Pickup daily 9–18','Order for Christmas by 20.12.','Limited batch'],
+  marquee:['100 % Finnish','Crunchy','Field-grown','From Nurkkila, Perniö','3+ jars 5 € each','Self-service pickup daily','Order for Christmas by 20.12.','Limited batch'],
   prodPill:'680 g jar · 6 € · 3+ jars 5 € each', prodTitle:'Choose your favourite',
   prodText:'All flavours cost the same. One jar is 6 €. When you order at least three jars, every jar costs 5 €, and you can mix flavours freely. Limited batch: order for Christmas by 20.12. or while stocks last.',
   details:'Ingredients and nutrition', ingr:'Ingredients', weight:'Weight 680 g, of which cucumber approx. 310 g.',
@@ -514,12 +511,12 @@ var T = {
   giftTitle:'A jar that <em>brings joy</em>.',
   giftText:'If you like, you can get your jars with a special Christmas label. The Christmas label is the same on every jar, whichever flavour you order, and it reads as in the picture: <b>Kurkkutilan Koruviipaleet · Christmas Edition · Hyvää Joulua! God Jul!</b> The jars make a ready gift for a colleague, a neighbour or the Christmas table.',
   giftSwitch:'I want the Christmas label', giftSwitchSmall:'Same label for all flavours · no extra cost', giftHowMany:'How many jars with the Christmas label?',
-  formTitle:'Order', formSub:'Fill in your details. Pickup from the cold store on Roitmäentie, any day 9–18.',
-  routeBtn:'🗺️ Directions to the cold store', routeLink:'Directions to the cold store on Roitmäentie (Google Maps)',
-  fDate:'Pickup day', fTime:'Pickup time', timePh:'Choose a time', errPick:'Please choose a pickup day and time.',
+  formTitle:'Order', formSub:'Fill in your details and choose a pickup day. Pickup from the self-service machine on Laukantie (Laukantie 151, Perniö).',
+  routeBtn:'🗺️ Directions to the pickup machine', routeLink:'Directions to the pickup machine on Laukantie (Google Maps)',
+  fDate:'Pickup day', fDateHint:'Your jars are in the machine from 12:00 on the day you choose.', timePh:'Choose a day', errPick:'Please choose a pickup day.',
   fName:'Name', fPhone:'Phone', fEmail:'Email', fEmailOpt:'(confirmation by email)', fMsg:'Message', optional:'(optional)',
-  infoPickup:'<b>Pickup:</b> from the cold store on Roitmäentie, any day 9–18. We can deliver in the Perniö and Särkisalo area by arrangement; write your request in the message field.',
-  fMsgHint:'Would you like delivery in the Perniö or Särkisalo area? Write your request here and we will arrange it separately.', fMsgPh:'E.g. delivery request, address or a suitable pickup time',
+  infoPickup:'<b>Pickup:</b> from the self-service machine on Laukantie (Laukantie 151, Perniö), any day, from 12:00 on the day you choose. The bag is marked with your order number and name. We can deliver in the Perniö and Särkisalo area by arrangement; write your request in the message field.',
+  fMsgHint:'Would you like delivery in the Perniö or Särkisalo area? Write your request here and we will arrange it separately.', fMsgPh:'E.g. delivery request and address',
   infoPay:'<b>Payment by MobilePay only</b> to '+ASET.mobilepay+'. You will get the payment instructions right after ordering.',
   sumTitle:'Basket', sumEmpty:'No jars yet. Choose your flavours above.', sumTotal:'Total',
   sumPay:'Pay with MobilePay after ordering. Use your order number as the message.',
@@ -530,13 +527,13 @@ var T = {
   storyTitle:'Grown in the open field in Nurkkila, Perniö.',
   storyText:'Our cucumbers grow in the open field on our own land in Nurkkila, Perniö. The summer harvest is preserved as crunchy slices, so the taste of summer lasts all winter.',
   fact1:'Finnish cucumber', fact2:'jar weight', fact3:'flavours to choose from',
-  footPickup:'pickup from the cold store on Roitmäentie, any day 9–18',
+  footPickup:'self-service pickup, any day',
   footNote:'Orders are handled by Pitkäsen Kurkkutila Oy. Your contact details are only used to handle your order.',
   errName:'Please fill in your name and phone number.', errEmail:'Please check the email address.', errNet:'Sending failed. Please try again or call 040 079 4090.',
-  donePickTxt:'Pickup {t}, the cold store on Roitmäentie.',
+  donePickTxt:'Your jars will be waiting in the self-service machine on Laukantie from {t}. The bag is marked with your order number and name.',
   doneTitle:'Thank you for your order!', doneNr:'Order number #{n}', donePay:'Pay with MobilePay', doneNumber:'Number', doneMessage:'Message',
   msgWord:'Order', copy:'Copy', copied:'Copied ✓',
-  donePickup:'Pick up your order from the cold store on Roitmäentie, any day 9–18.',
+  donePickup:'Collect your order from the self-service machine on Laukantie.',
   doneMail:'A confirmation was sent to {e}.', doneClose:'Done'
  }
 };
@@ -629,10 +626,10 @@ $('#jouluBox').addEventListener('change', function(){ joulu=this.checked; jouluK
 $('#send').addEventListener('click', function(){
   var t=T[lang], f=$('#form'), err=$('#err');
   var d = { nimi:f.nimi.value.trim(), puhelin:f.puhelin.value.trim(), email:f.email.value.trim(), viesti:f.viesti.value.trim(),
-            hp:f.hp.value, kieli:lang, noutoPvm:f.noutoPvm.value, noutoAika:f.noutoAika.value, maarat:JSON.parse(JSON.stringify(qty)), joulu:joulu, jouluKpl:jouluKpl };
+            hp:f.hp.value, kieli:lang, noutoPvm:f.noutoPvm.value, maarat:JSON.parse(JSON.stringify(qty)), joulu:joulu, jouluKpl:jouluKpl };
   err.textContent='';
   if (!d.nimi || !d.puhelin){ err.textContent=t.errName; f.scrollIntoView({behavior:'smooth',block:'center'}); (d.nimi?f.puhelin:f.nimi).focus(); return; }
-  if (!d.noutoPvm || !d.noutoAika || d.noutoPvm < f.noutoPvm.min){ err.textContent=t.errPick; (d.noutoPvm && d.noutoPvm>=f.noutoPvm.min?f.noutoAika:f.noutoPvm).focus(); return; }
+  if (!d.noutoPvm){ err.textContent=t.errPick; f.noutoPvm.focus(); return; }
   if (d.email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)){ err.textContent=t.errEmail; f.email.focus(); return; }
   var btn=this; btn.disabled=true; btn.textContent=t.sending;
   function ok(r){ r.email=d.email; lastOrder=r; fillDone(r); $('#done').classList.add('show');
@@ -666,12 +663,19 @@ addEventListener('scroll', onScroll, {passive:true});
 var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:.12}) : null;
 function observe(){ $$('.reveal:not(.in)').forEach(function(el){ io ? io.observe(el) : el.classList.add('in'); }); }
 
+var VKP={fi:['su','ma','ti','ke','to','pe','la'], sv:['sön','mån','tis','ons','tor','fre','lör'], en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat']};
 function fillTimes(){
-  var sel=$('select[name=noutoAika]'), cur=sel.value, o='<option value="">'+T[lang].timePh+'</option>';
-  for (var h=9; h<=18; h++){ ['00','30'].forEach(function(m){ if (h===18 && m==='30') return; var v=(h<10?'0':'')+h+':'+m; o+='<option value="'+v+'">'+(lang==='sv'?'kl. ':lang==='en'?'':'klo ')+v+'</option>'; }); }
+  var sel=$('select[name=noutoPvm]'), cur=sel.value, o='<option value="">'+T[lang].timePh+'</option>', p=function(n){return (n<10?'0':'')+n;};
+  var now=new Date(), d=new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  if (now.getHours() >= 10) d.setDate(d.getDate()+1);           // saman päivän nouto vain ennen klo 10 tilattaessa
+  var klo = lang==='sv' ? 'kl. 12' : lang==='en' ? '12:00' : 'klo 12';
+  for (var i=0; i<21; i++){
+    var v=d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate());
+    o+='<option value="'+v+'">'+VKP[lang][d.getDay()]+' '+d.getDate()+'.'+(d.getMonth()+1)+'. · '+(lang==='en'?'from ':'')+klo+(lang==='fi'?' alkaen':lang==='sv'?' och framåt':'')+'</option>';
+    d.setDate(d.getDate()+1);
+  }
   sel.innerHTML=o; sel.value=cur;
 }
-(function(){ var d=new Date(), p=function(n){return (n<10?'0':'')+n;}; $('input[name=noutoPvm]').min=d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate()); })();
 $('#routeBtn').href = ASET.reitti;
 var start='fi'; try { start = localStorage.getItem('kurkku-lang') || 'fi'; } catch(e){}
 applyLang(start==='sv'||start==='en'?start:'fi'); onScroll();
